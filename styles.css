@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@0,300..900;1,300..900&display=swap');
 
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --navy-950: #0E1323;
+    --navy-900: #1C204B;
+    --navy-800: #33397A;
+    --navy-200: #BBC0FF;
+    --orange: #FF8B64;
+    --purple-700: #7335D2;
+    --purple-600: #5747EA;
+    --purple-500: #7078C9;
+    --blue: #55C2E6;
+    --pink: #FF5E7D;
+    --green: #4BCF82;
+    --yellow: #F1C75B;
+    --grey: #D8D8D8;
+    --font-family: 'Rubik', sans-serif;
+    --font-size-1: 3.5rem;
+    --font-size-2: 2.5rem;
+    --font-size-3: 2rem;
+    --font-size-4: 1.5rem;
+    --font-size-5: 1.125rem;
+    --font-size-6: 0.9375rem;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --line-height-1: 4.125rem;
+    --line-height-2: 2.9375rem;
+    --line-height-3: 2.375rem;
+    --line-height-4: 1.75rem;
+    --line-height-5: 1.3125rem;
+    --line-height-6: 1.125rem;
+    --spacing-100: 0.5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-100: 2.5rem;
+}
+
 html {
     box-sizing: border-box;
 }
