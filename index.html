@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   
   <title>Frontend Mentor | Time tracking dashboard</title>
 </head>
@@ -15,8 +15,12 @@
     <article class="report">
       <!-- USER INFO AND TABS -->
       <header class="header">
-        <img src="./images/image-jeremy.png" alt="User avatar">
-        <h1>Report for <span class="name">Jeremy Robson</span></h1>
+        <div class="user">
+          <div class="img-thumb">
+            <img src="./images/image-jeremy.png" alt="User avatar">
+          </div>
+          <h1>Report for <span class="name">Jeremy Robson</span></h1>
+        </div>
         <div class="tablist" id="tablist" role="tablist" aria-label="Data timeframes">
           <button role="tab" aria-selected="true" aria-controls="panel" id="daily-info">Daily</button>
           <button role="tab" aria-selected="false" aria-controls="panel" id="weekly-info">Weekly</button>
@@ -27,35 +31,83 @@
       <!-- INFO PANELS -->
       <section class="panel" id="panel" role="tabpanel" tabindex="0" aria-labelledby="daily-info">
         <ul class="cards">
-          <li class="card">
-            <p class="title">Work</p>
-            <p class="current">5hrs</p>
-            <p class="previous">Previous - 7hrs</p>
+          <li class="card work">
+            <img src="./images/icon-work.svg" alt="" class="icon">
+            <div class="card__content">
+              <div class="card__header">
+                <p class="title">Work</p>
+                <img alt="" src="./images/icon-ellipsis.svg"/>
+              </div>
+              <div class="card__data">
+                <p class="current">5hrs</p>
+                <p class="previous">Previous - 7hrs</p>
+              </div>
+            </div>
           </li>
-          <li class="card">
-            <p class="title">Play</p>
-            <p class="current">1hrs</p>
-            <p class="previous">Previous - 2hrs</p>
+          <li class="card play">
+            <img src="./images/icon-play.svg" alt="" class="icon">
+            <div class="card__content">
+              <div class="card__header">
+                <p class="title">Play</p>
+                <img alt="" src="./images/icon-ellipsis.svg"/>
+              </div>
+              <div class="card__data">
+                <p class="current">1hrs</p>
+                <p class="previous">Previous - 2hrs</p>
+              </div>
+            </div>
           </li>
-          <li class="card">
-            <p class="title">Study</p>
-            <p class="current">0hrs</p>
-            <p class="previous">Previous - 1hrs</p>
+          <li class="card study">
+            <img src="./images/icon-study.svg" alt="" class="icon">
+            <div class="card__content">
+              <div class="card__header">
+                <p class="title">Study</p>
+                <img alt="" src="./images/icon-ellipsis.svg"/>
+              </div>
+              <div class="card__data">
+                <p class="current">0hrs</p>
+                <p class="previous">Previous - 1hrs</p>
+              </div>
+            </div>
           </li>
-          <li class="card">
-            <p class="title">Exercise</p>
-            <p class="current">1hrs</p>
-            <p class="previous">Previous - 1hrs</p>
+          <li class="card exercise">
+            <img src="./images/icon-exercise.svg" alt="" class="icon">
+            <div class="card__content">
+              <div class="card__header">
+                <p class="title">Exercise</p>
+                <img alt="" src="./images/icon-ellipsis.svg"/>
+              </div>
+              <div class="card__data">
+                <p class="current">1hrs</p>
+                <p class="previous">Previous - 1hrs</p>
+              </div>
+            </div>
           </li>
-          <li class="card">
-            <p class="title">Social</p>
-            <p class="current">1hrs</p>
-            <p class="previous">Previous - 3hrs</p>
+          <li class="card social">
+            <img src="./images/icon-social.svg" alt="" class="icon">
+            <div class="card__content">
+              <div class="card__header">
+                <p class="title">Social</p>
+                <img alt="" src="./images/icon-ellipsis.svg"/>
+              </div>
+              <div class="card__data">
+                <p class="current">1hrs</p>
+                <p class="previous">Previous - 3hrs</p>
+              </div>
+            </div>
           </li>
-          <li class="card">
-            <p class="title">Self Care</p>
-            <p class="current">0hrs</p>
-            <p class="previous">Previous - 1hrs</p>
+          <li class="card self-care">
+            <img src="./images/icon-self-care.svg" alt="" class="icon">
+            <div class="card__content">
+              <div class="card__header">
+                <p class="title">Self Care</p>
+                <img alt="" src="./images/icon-ellipsis.svg"/>
+              </div>
+              <div class="card__data">
+                <p class="current">0hrs</p>
+                <p class="previous">Previous - 1hrs</p>
+              </div>
+            </div>
           </li>
         </ul>
       </section>

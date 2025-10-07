@@ -1,0 +1,170 @@
+@import './basic.css';
+
+.report {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-300);
+    max-width: 327px;
+    background-color: transparent;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: var(--navy-900);
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-300);
+    padding: var(--spacing-400);
+    border-radius: 15px;
+    background-color: var(--purple-600);
+}
+
+.user img {
+    width: 64px;
+    height: 64px;
+}
+
+.img-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 67px;
+    height: 67px;
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    background-color: var(--grey);
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--spacing-100);
+    font-size: inherit;
+    font-weight: var(--font-weight-regular);
+}
+
+.name {
+    display: inline-block;
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-4);
+    font-weight: var(--font-weight-light);
+    color: var(--white);
+}
+
+.tablist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-300) 0;
+}
+
+[role="tab"] {
+    width: 109px;
+    height: 21px;
+    border: none;
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
+    color: var(--purple-500);
+    background-color: transparent;
+}
+
+[role="tab"] [aria-selected="true"] {
+    color: var(--white);
+}
+
+.panel {
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-300);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 160px;
+    border-radius: 15px;
+}
+
+.card .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 78px;
+    height: 78px;
+}
+
+.card.work {
+    background-color: var(--orange);
+}
+
+.card.play {
+    background-color: var(--blue);
+}
+
+.card.study {
+    background-color: var(--pink);
+}
+
+.card.exercise {
+    background-color: var(--green);
+}
+
+.card.social {
+    background-color: var(--purple-700);
+}
+
+.card.self-care {
+    background-color: var(--yellow);
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+    padding: var(--spacing-300);
+    border-radius: 15px;
+    background-color: var(--navy-900);
+    z-index: 1;
+}
+
+.card__data,
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-5);
+    color: var(--white);
+}
+
+.current {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-3);
+    color: var(--white);
+}

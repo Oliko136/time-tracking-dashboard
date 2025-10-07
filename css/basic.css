@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@0,300..900;1,300..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 :root {
     --white: #FFFFFF;
     --black: #000000;
@@ -36,7 +35,7 @@
     --spacing-200: 1rem;
     --spacing-300: 1.5rem;
     --spacing-400: 2rem;
-    --spacing-100: 2.5rem;
+    --spacing-500: 2.5rem;
 }
 
 html {
@@ -68,6 +67,11 @@ button {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     font-family: var(--font-family);
     font-size: var(--font-size-6);
     line-height: var(--line-height-6);
