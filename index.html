@@ -10,60 +10,56 @@
 </head>
 <body>
   
-  Report for
-  Jeremy Robson
+  <main>
+    <article class="report">
+      <!-- USER INFO AND TABS -->
+      <header class="header">
+        <img src="./images/image-jeremy.png" alt="User avatar">
+        <h1>Report for <span class="name">Jeremy Robson</span></h1>
+        <div class="tablist" id="tablist" role="tablist" aria-label="Data timeframes">
+          <button role="tab" aria-selected="true" aria-controls="panel" id="daily-info">Daily</button>
+          <button role="tab" aria-selected="false" aria-controls="panel" id="weekly-info">Weekly</button>
+          <button role="tab" aria-selected="false" aria-controls="panel" id="monthly-info">Monthly</button>
+        </div>
+      </header>
 
-  Daily
-  Weekly
-  Monthly
-
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
-
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
-
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
-
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
-
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
-
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
+      <!-- INFO PANELS -->
+      <section class="panel" id="panel" role="tabpanel" tabindex="0" aria-labelledby="daily-info">
+        <ul class="info">
+          <li class="info__item">
+            <p class="title">Work</p>
+            <p class="current">5hrs</p>
+            <p class="previous">Previous - 7hrs</p>
+          </li>
+          <li class="info__item">
+            <p class="title">Play</p>
+            <p class="current">1hrs</p>
+            <p class="previous">Previous - 2hrs</p>
+          </li>
+          <li class="info__item">
+            <p class="title">Study</p>
+            <p class="current">0hrs</p>
+            <p class="previous">Previous - 1hrs</p>
+          </li>
+          <li class="info__item">
+            <p class="title">Exercise</p>
+            <p class="current">1hrs</p>
+            <p class="previous">Previous - 1hrs</p>
+          </li>
+          <li class="info__item">
+            <p class="title">Social</p>
+            <p class="current">1hrs</p>
+            <p class="previous">Previous - 3hrs</p>
+          </li>
+          <li class="info__item">
+            <p class="title">Self Care</p>
+            <p class="current">0hrs</p>
+            <p class="previous">Previous - 1hrs</p>
+          </li>
+        </ul>
+      </section>
+    </article>
+  </main>
 
 </body>
 </html>
