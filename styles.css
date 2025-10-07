@@ -66,3 +66,11 @@ button {
     line-height: inherit;
     cursor: pointer;
 }
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-6);
+    line-height: var(--line-height-6);
+    color: var(--navy-200);
+    background-color: var(--navy-950);
+}
