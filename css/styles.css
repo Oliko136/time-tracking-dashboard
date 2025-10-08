@@ -80,9 +80,11 @@ h1 {
     line-height: var(--line-height-5);
     color: var(--purple-500);
     background-color: transparent;
+    transition: color 250ms linear;
 }
 
-[role="tab"][aria-selected="true"] {
+[role="tab"][aria-selected="true"],
+[role="tab"]:hover {
     color: var(--white);
 }
 
@@ -106,6 +108,11 @@ h1 {
     padding-top: 38px;
     border-radius: 15px;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover .card__content {
+    background-color: var(--navy-800);
 }
 
 .card .icon {
@@ -149,6 +156,7 @@ h1 {
     border-radius: 15px;
     background-color: var(--navy-900);
     z-index: 1;
+    transition: background-color 250ms linear;
 }
 
 .card__data,
