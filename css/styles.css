@@ -228,7 +228,7 @@ h1 {
 @media screen and (min-width: 1440px) {
     .report {
         display: grid;
-        grid-template-columns: 255px 3fr;
+        grid-template-columns: calc((100% - (3 * var(--spacing-400))) / 4) 1fr;
         gap: var(--spacing-400);
         width: 1116px;
     }
