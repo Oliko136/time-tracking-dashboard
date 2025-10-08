@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing-300);
-    max-width: 327px;
+    width: 327px;
     background-color: transparent;
 }
 
@@ -15,6 +15,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     border-radius: 15px;
     background-color: var(--navy-900);
 }
@@ -24,6 +25,7 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing-300);
+    width: 100%;
     padding: var(--spacing-400);
     border-radius: 15px;
     background-color: var(--purple-600);
@@ -101,14 +103,15 @@ h1 {
     display: flex;
     flex-direction: column-reverse;
     width: 100%;
-    height: 160px;
+    padding-top: 38px;
     border-radius: 15px;
+    overflow: hidden;
 }
 
 .card .icon {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -8px;
+    right: 10px;
     z-index: 0;
     width: 78px;
     height: 78px;
@@ -167,4 +170,109 @@ h1 {
     font-weight: var(--font-weight-light);
     line-height: var(--line-height-3);
     color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+    .report {
+        width: 612px;
+    }
+    
+    .user {
+        justify-content: start;
+    }
+
+    .tablist {
+        width: 100%;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        padding-top: 33px;
+    }
+
+    .card__content {
+        gap: var(--spacing-200);
+    }
+
+    .card__data {
+        flex-direction: column;
+        align-items: start;
+        gap: var(--spacing-100);
+    }
+
+    .current {
+        font-size: var(--font-size-1);
+        line-height: var(--line-height-1);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+    .card .icon {
+        width: 57px;
+        height: 57px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .report {
+        display: grid;
+        grid-template-columns: 255px 3fr;
+        gap: var(--spacing-400);
+        width: 1116px;
+    }
+
+    .header {
+        align-self: stretch;
+    }
+
+    .user {
+        flex-direction: column;
+        align-items: start;
+        height: 100%;
+        gap: var(--spacing-500);
+    }
+
+    .user img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .img-thumb {
+        width: 81px;
+        height: 81px;
+    }
+
+    .name {
+        font-size: var(--font-size-2);
+        line-height: var(--line-height-2);
+    }
+
+    .tablist {
+        flex-direction: column;
+        align-items: start;
+        gap: 1.31rem;
+        padding: var(--spacing-400);
+    }
+
+    [role="tab"] {
+        width: 68px;
+        text-align: left;
+    }
+
+    .cards {
+        gap: var(--spacing-400);
+    }
+
+    .card {
+        padding-top: 45px;
+    }
+
+    .card__content {
+        gap: var(--spacing-300);
+        padding: var(--spacing-400);
+    }
 }

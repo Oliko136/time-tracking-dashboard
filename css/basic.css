@@ -72,6 +72,8 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding-top: 5.06rem;
+    padding-bottom: 5.06rem;
     font-family: var(--font-family);
     font-size: var(--font-size-6);
     line-height: var(--line-height-6);
