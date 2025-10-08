@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/index.js"></script>
   
   <title>Frontend Mentor | Time tracking dashboard</title>
 </head>
@@ -22,16 +23,16 @@
           <h1>Report for <span class="name">Jeremy Robson</span></h1>
         </div>
         <div class="tablist" id="tablist" role="tablist" aria-label="Data timeframes">
-          <button role="tab" aria-selected="true" aria-controls="panel" id="daily-info">Daily</button>
-          <button role="tab" aria-selected="false" aria-controls="panel" id="weekly-info">Weekly</button>
-          <button role="tab" aria-selected="false" aria-controls="panel" id="monthly-info">Monthly</button>
+          <button role="tab" aria-selected="true" aria-controls="panel" id="daily" data-tab>Daily</button>
+          <button role="tab" aria-selected="false" aria-controls="panel" id="weekly" data-tab>Weekly</button>
+          <button role="tab" aria-selected="false" aria-controls="panel" id="monthly" data-tab>Monthly</button>
         </div>
       </header>
 
       <!-- INFO PANELS -->
-      <section class="panel" id="panel" role="tabpanel" tabindex="0" aria-labelledby="daily-info">
+      <section class="panel" id="panel" role="tabpanel" tabindex="0" aria-labelledby="daily">
         <ul class="cards">
-          <li class="card work">
+          <!-- <li class="card work">
             <img src="./images/icon-work.svg" alt="" class="icon">
             <div class="card__content">
               <div class="card__header">
@@ -108,7 +109,7 @@
                 <p class="previous">Previous - 1hrs</p>
               </div>
             </div>
-          </li>
+          </li> -->
         </ul>
       </section>
     </article>

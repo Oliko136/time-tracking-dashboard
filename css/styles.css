@@ -82,7 +82,7 @@ h1 {
     background-color: transparent;
 }
 
-[role="tab"] [aria-selected="true"] {
+[role="tab"][aria-selected="true"] {
     color: var(--white);
 }
 
