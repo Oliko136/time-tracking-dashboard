@@ -34,7 +34,7 @@ function renderCard(type, timeframeData, timeframeName) {
         <img src="./images/icon-${formatTypeName(type)}.svg" alt="" class="icon">
         <div class="card__content">
             <div class="card__header">
-                <p class="title">${type}</p>
+                <h2 class="title">${type}</h2>
                 <img alt="" src="./images/icon-ellipsis.svg"/>
             </div>
             <div class="card__data">
