@@ -15,24 +15,30 @@
   <main>
     <section class="report">
       <!-- USER INFO AND TABS -->
-      <header class="header">
+      <div class="header">
         <div class="user">
           <div class="img-thumb">
             <img src="./images/image-jeremy.png" alt="User avatar">
           </div>
           <h1>Report for <span class="name">Jeremy Robson</span></h1>
         </div>
-        <div class="tablist" id="tablist" role="tablist" aria-label="Data timeframes">
-          <button type="button" role="tab" aria-selected="true" aria-controls="panel" id="daily" data-tab>Daily</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="panel" id="weekly" data-tab>Weekly</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="panel" id="monthly" data-tab>Monthly</button>
-        </div>
-      </header>
+        <ul class="tablist" id="tablist" role="tablist" aria-label="Data timeframes">
+          <li>
+            <button type="button" role="tab" aria-selected="true" aria-controls="panel" id="daily" data-tab>Daily</button>
+          </li>
+          <li>
+            <button type="button" role="tab" aria-selected="false" aria-controls="panel" id="weekly" data-tab>Weekly</button>
+          </li>
+          <li>
+            <button type="button" role="tab" aria-selected="false" aria-controls="panel" id="monthly" data-tab>Monthly</button>
+          </li>
+        </ul>
+      </div>
 
       <!-- INFO PANELS -->
-      <section class="panel" id="panel" role="tabpanel" tabindex="0" aria-labelledby="daily">
+      <div class="panel" id="panel" role="tabpanel" tabindex="0" aria-labelledby="daily">
         <ul class="cards"></ul>
-      </section>
+      </div>
     </section>
   </main>
 
