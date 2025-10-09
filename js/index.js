@@ -2,26 +2,32 @@ const tablist = document.getElementById('tablist');
 const panel = document.getElementById('panel');
 const cards = document.querySelector('.cards');
 
-function switchTabs(e) {
-    if (e.target.hasAttribute('data-tab')) {
-        cards.innerHTML = '';
-
-        const tabs = Array.from(tablist.children);
-        tabs.forEach(tab =>
-            tab === e.target
-                ? tab.setAttribute('aria-selected', true)
-                : tab.setAttribute('aria-selected', false));
-        
-        panel.setAttribute('aria-labelledby', e.target.id);
-
-        fetchData(e.target.id);
+async function switchTabs(e) {
+    if (!e.target.hasAttribute('data-tab')) {
+        return;
     }
+
+    cards.innerHTML = '';
+
+    const tabs = Array.from(tablist.children);
+    tabs.forEach(tab =>
+        tab === e.target
+            ? tab.setAttribute('aria-selected', true)
+            : tab.setAttribute('aria-selected', false));
+        
+    panel.setAttribute('aria-labelledby', e.target.id);
+
+    loadContent(e.target.id);
 }
 
-async function fetchData(timeframe) {
-    const res = await fetch('./data.json');
-    const data = await res.json();
-    data.forEach(item => renderCard(item.title, item.timeframes[timeframe], timeframe));
+async function fetchData() {
+    try {
+        const res = await fetch('./data.json');
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 function renderCard(type, timeframeData, timeframeName) {
@@ -84,7 +90,19 @@ function choosePreviousText(timeframeName) {
     return previousText;
 }
 
-fetchData('daily');
+async function loadContent(timeframe) {
+    const data = await fetchData();
+
+    data.forEach(item => {
+        if (item.timeframes && item.timeframes[timeframe]) {
+            renderCard(item.title, item.timeframes[timeframe], timeframe);
+        } else {
+            console.warn(`Missing timeframe "${timeframe}" for item "${item.title}"`);
+        }
+    })
+}
+
+loadContent('daily');
 
 // Event listeners
 tablist.addEventListener('click', switchTabs);
