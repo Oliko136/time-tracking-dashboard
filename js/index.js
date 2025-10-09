@@ -95,15 +95,27 @@ function formatHrs(number) {
 }
 
 async function loadContent(timeframe) {
-    const data = await fetchData();
+    try {
+        const data = await fetchData();
 
-    data.forEach(item => {
-        if (item.timeframes && item.timeframes[timeframe]) {
+        if (!data || data === null) {
+            console.error('Data is missing');
+            return;
+        }
+
+        data.forEach(item => {
+            if (item.timeframes && item.timeframes[timeframe]) {
             renderCard(item.title, item.timeframes[timeframe], timeframe);
         } else {
             console.warn(`Missing timeframe "${timeframe}" for item "${item.title}"`);
-        }
-    })
+            }
+        })
+    } catch (error) {
+        console.error('Failed to fetch data: ', error);
+    }
+    
+
+    
 }
 
 loadContent('daily');
