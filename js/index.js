@@ -17,7 +17,7 @@ async function switchTabs(e) {
         
     panel.setAttribute('aria-labelledby', e.target.id);
 
-    loadContent(e.target.id);
+    await loadContent(e.target.id);
 }
 
 async function fetchData() {
