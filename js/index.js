@@ -44,8 +44,8 @@ function renderCard(type, timeframeData, timeframeName) {
                 <img alt="" src="./images/icon-ellipsis.svg"/>
             </div>
             <div class="card__data">
-                <p class="current">${timeframeData.current}hrs</p>
-                <p class="previous">${choosePreviousText(timeframeName)} - ${timeframeData.previous}hrs</p>
+                <p class="current">${timeframeData.current}${formatHrs(timeframeData.current)}</p>
+                <p class="previous">${choosePreviousText(timeframeName)} - ${timeframeData.previous}${formatHrs(timeframeData.previous)}</p>
             </div>
         </div>`
 
@@ -88,6 +88,10 @@ function choosePreviousText(timeframeName) {
     }
 
     return previousText;
+}
+
+function formatHrs(number) {
+    return number === 1 ? 'hr' : 'hrs';
 }
 
 async function loadContent(timeframe) {
