@@ -1,22 +1,24 @@
 const tablist = document.getElementById('tablist');
-const panel = document.getElementById('panel');
-const cards = document.querySelector('.cards');
+const panelContainer = document.getElementById('panel-container');
 
 async function switchTabs(e) {
     if (!e.target.hasAttribute('data-tab')) {
         return;
     }
 
-    cards.innerHTML = '';
-
+    const targetPanel = document.getElementById(`panel-${e.target.id}`);
     const tabs = Array.from(tablist.children);
     tabs.forEach(tab =>
-        tab === e.target
-            ? tab.setAttribute('aria-selected', true)
-            : tab.setAttribute('aria-selected', false));
-        
-    panel.setAttribute('aria-labelledby', e.target.id);
-
+         tab === e.target
+             ? tab.setAttribute('aria-selected', true)
+             : tab.setAttribute('aria-selected', false));
+    
+    const panels = Array.from(panelContainer.children);
+    panels.forEach(panel =>
+        panel === targetPanel
+            ? panel.removeAttribute('hidden')
+            : panel.setAttribute('hidden', true));
+    
     await loadContent(e.target.id);
 }
 
@@ -32,6 +34,7 @@ async function fetchData() {
 
 function renderCard(type, timeframeData, timeframeName) {
     const li = document.createElement('li');
+
     li.classList.add('card');
             
     li.classList.add(formatTypeName(type));
@@ -48,8 +51,8 @@ function renderCard(type, timeframeData, timeframeName) {
                 <p class="previous">${choosePreviousText(timeframeName)} - ${timeframeData.previous}${formatHrs(timeframeData.previous)}</p>
             </div>
         </div>`
-
-    cards.appendChild(li);
+    
+    return li;
 }
 
 function formatTypeName(typeName) {
@@ -95,6 +98,16 @@ function formatHrs(number) {
 }
 
 async function loadContent(timeframe) {
+    const targetPanel = document.getElementById(`panel-${timeframe}`);
+    
+    if (targetPanel.innerHTML !== '') {
+        return;
+    }
+
+    const cardList = document.createElement('ul');
+    cardList.classList.add('cards');
+    targetPanel.appendChild(cardList);
+
     try {
         const data = await fetchData();
 
@@ -105,7 +118,8 @@ async function loadContent(timeframe) {
 
         data.forEach(item => {
             if (item.timeframes && item.timeframes[timeframe]) {
-            renderCard(item.title, item.timeframes[timeframe], timeframe);
+                const cardItem = renderCard(item.title, item.timeframes[timeframe], timeframe);
+                cardList.appendChild(cardItem);
         } else {
             console.warn(`Missing timeframe "${timeframe}" for item "${item.title}"`);
             }
@@ -113,9 +127,6 @@ async function loadContent(timeframe) {
     } catch (error) {
         console.error('Failed to fetch data: ', error);
     }
-    
-
-    
 }
 
 loadContent('daily');

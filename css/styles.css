@@ -88,6 +88,7 @@ h1 {
     color: var(--white);
 }
 
+.panel-container,
 .panel {
     width: 100%;
 }

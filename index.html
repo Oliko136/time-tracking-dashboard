@@ -22,22 +22,18 @@
           </div>
           <h1>Report for <span class="name">Jeremy Robson</span></h1>
         </div>
-        <ul class="tablist" id="tablist" role="tablist" aria-label="Data timeframes">
-          <li role="presentation">
-            <button type="button" role="tab" aria-selected="true" aria-controls="panel" id="daily" data-tab>Daily</button>
-          </li>
-          <li role="presentation">
-            <button type="button" role="tab" aria-selected="false" aria-controls="panel" id="weekly" data-tab>Weekly</button>
-          </li>
-          <li role="presentation">
-            <button type="button" role="tab" aria-selected="false" aria-controls="panel" id="monthly" data-tab>Monthly</button>
-          </li>
-        </ul>
+        <div class="tablist" id="tablist" role="tablist" aria-label="Data timeframes">
+          <button type="button" role="tab" aria-selected="true" aria-controls="panel-daily" id="daily" data-tab>Daily</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-weekly" id="weekly" data-tab>Weekly</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-monthly" id="monthly" data-tab>Monthly</button>
+        </div>
       </header>
 
       <!-- INFO PANELS -->
-      <div class="panel" id="panel" role="tabpanel" tabindex="0" aria-labelledby="daily">
-        <ul class="cards"></ul>
+      <div id="panel-container" class="panel-container">
+        <div class="panel" id="panel-daily" role="tabpanel" tabindex="0" aria-labelledby="daily"></div>
+        <div class="panel" id="panel-weekly" role="tabpanel" tabindex="0" aria-labelledby="weekly" hidden></div>
+        <div class="panel" id="panel-monthly" role="tabpanel" tabindex="0" aria-labelledby="monthly" hidden></div>
       </div>
     </section>
   </main>
