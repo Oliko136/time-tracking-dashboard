@@ -100,7 +100,7 @@ function formatHrs(number) {
 async function loadContent(timeframe) {
     const targetPanel = document.getElementById(`panel-${timeframe}`);
     
-    if (targetPanel.innerHTML !== '') {
+    if (targetPanel.hasChildNodes()) {
         return;
     }
 
