@@ -20,6 +20,8 @@ async function switchTabs(e) {
             : panel.setAttribute('hidden', true));
     
     await loadContent(e.target.id);
+
+    setTimeout(() => targetPanel.focus(), 50);
 }
 
 async function fetchData() {
@@ -120,7 +122,7 @@ async function loadContent(timeframe) {
             if (item.timeframes && item.timeframes[timeframe]) {
                 const cardItem = renderCard(item.title, item.timeframes[timeframe], timeframe);
                 cardList.appendChild(cardItem);
-        } else {
+            } else {
             console.warn(`Missing timeframe "${timeframe}" for item "${item.title}"`);
             }
         })
@@ -129,7 +131,7 @@ async function loadContent(timeframe) {
     }
 }
 
-loadContent('daily');
+loadContent('daily').then(document.getElementById('panel-daily').focus());
 
 // Event listeners
 tablist.addEventListener('click', switchTabs);
